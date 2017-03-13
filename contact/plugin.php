@@ -105,6 +105,7 @@ class pluginContact extends Plugin {
 		   # $_POST
 		   $name       	= isset($_POST['name']) ? $_POST['name'] : '';
 		   $email      	= isset($_POST['email']) ? $_POST['email'] : '';
+		   $phone      	= isset($_POST['phone']) ? $_POST['phone'] : '';
 		   $message    	= isset($_POST['message']) ? $_POST['message'] : '';
 		   $interested 	= isset($_POST['interested']) ? $_POST['interested'] : '';			            		           
 		   $contentType = 'text'; // Type de mail (text/html)
@@ -124,6 +125,7 @@ class pluginContact extends Plugin {
 		            # Contenu du mail.
 		            $email_content  = $Language->get('Name:').$name."\r\n";
 		            $email_content .= $Language->get('Email:').$email."\r\n";
+					$email_content .= $Language->get('Phone:').$phone."\r\n";
 		            $email_content .= $Language->get('Message:')."\r\n".$message."\r\n";
 		            
 		            # Entêtes du mail
